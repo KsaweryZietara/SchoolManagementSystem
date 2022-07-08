@@ -90,11 +90,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\CourseModel.cs" />
-    <Compile Include="Models\GradeModel.cs" />
-    <Compile Include="Models\MessageModel.cs" />
-    <Compile Include="Models\StudentModel.cs" />
-    <Compile Include="Models\TeacherModel.cs" />
+    <Compile Include="StudentAccountModels\TeacherModel.cs" />
+    <Compile Include="TeacherAccountModels\StudentModel.cs" />
+    <Compile Include="TeacherAccountModels\CourseModel.cs" />
+    <Compile Include="CommonModels\GradeModel.cs" />
+    <Compile Include="CommonModels\MessageModel.cs" />
+    <Compile Include="StudentAccountModels\CourseModel.cs" />
+    <Compile Include="StudentAccountModels\StudentModel.cs" />
+    <Compile Include="TeacherAccountModels\TeacherModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

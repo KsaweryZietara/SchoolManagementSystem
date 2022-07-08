@@ -3,14 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SystemLibrary.CommonModels;
 
-namespace SystemLibrary.Models {
+namespace SystemLibrary.TeacherAccountModels {
     class TeacherModel {
-
-        /// <summary>
-        /// Represents id of the teacher.
-        /// </summary>
-        public int Id { get; set; }
 
         /// <summary>
         /// Represents first name of the teacher. 

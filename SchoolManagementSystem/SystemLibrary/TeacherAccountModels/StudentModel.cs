@@ -3,15 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SystemLibrary.CommonModels;
 
-namespace SystemLibrary.Models {
+namespace SystemLibrary.TeacherAccountModels {
     class StudentModel {
-
-        /// <summary>
-        /// Represents id of the student.
-        /// </summary>
-        public int Id { get; set; }
-
+        
         /// <summary>
         /// Represents first name of the student. 
         /// </summary>
@@ -28,18 +24,8 @@ namespace SystemLibrary.Models {
         public string EmailAddress { get; set; }
 
         /// <summary>
-        /// Represents password of the student.
+        /// Represents grades which students got in course.
         /// </summary>
-        public string Password { get; set; }
-
-        /// <summary>
-        /// Represents messages of the student.
-        /// </summary>
-        public List<MessageModel> Messages { get; set; } = new List<MessageModel>();
-
-        /// <summary>
-        /// Represents courses which student attend.
-        /// </summary>
-        public List<CourseModel> Courses { get; set; } = new List<CourseModel>();
+        public List<GradeModel> Grades { get; set; } = new List<GradeModel>();
     }
 }

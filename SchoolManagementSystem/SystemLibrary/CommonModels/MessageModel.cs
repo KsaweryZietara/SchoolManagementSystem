@@ -4,13 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SystemLibrary.Models {
+namespace SystemLibrary.CommonModels {
     class MessageModel {
-
-        /// <summary>
-        /// Represents id of the message.
-        /// </summary>
-        public int Id { get; set; }
 
         /// <summary>
         /// Represents email address of the sender.
