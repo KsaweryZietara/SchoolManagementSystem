@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using SystemLibrary.CommonModels;
 
 namespace SystemLibrary.StudentAccountModels {
-    class CourseModel {
+    public class CourseModel {
 
         /// <summary>
         /// Represents name of the course.

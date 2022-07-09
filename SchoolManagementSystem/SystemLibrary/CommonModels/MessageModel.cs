@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SystemLibrary.CommonModels {
-    class MessageModel {
+    public class MessageModel {
 
         /// <summary>
         /// Represents email address of the sender.

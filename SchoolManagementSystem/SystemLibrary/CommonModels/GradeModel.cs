@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SystemLibrary.CommonModels {
-    class GradeModel {
+    public class GradeModel {
 
         /// <summary>
         /// Represents name of the grade.

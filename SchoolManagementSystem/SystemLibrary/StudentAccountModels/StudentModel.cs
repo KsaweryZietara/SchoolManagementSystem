@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using SystemLibrary.CommonModels;
 
 namespace SystemLibrary.StudentAccountModels {
-    class StudentModel {
+    public class StudentModel {
 
         /// <summary>
         /// Represents first name of the student. 
@@ -37,5 +37,12 @@ namespace SystemLibrary.StudentAccountModels {
         /// Represents courses which student attend.
         /// </summary>
         public List<CourseModel> Courses { get; set; } = new List<CourseModel>();
+
+        public StudentModel(string firstName, string lastName, string emailAddress, string password) {
+            FirstName = firstName;
+            LastName = lastName;
+            EmailAddress = emailAddress;
+            Password = password;
+        }
     }
 }

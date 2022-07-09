@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SystemLibrary.StudentAccountModels {
-    class TeacherModel {
+    public class TeacherModel {
 
         /// <summary>
         /// Represents first name of the teacher. 

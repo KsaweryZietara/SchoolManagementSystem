@@ -20,6 +20,7 @@ namespace SystemUI {
     public partial class MainWindow : Window {
         public MainWindow() {
             InitializeComponent();
+            Main.NavigationService.Navigate(new LoginPage());
         }
     }
 }
