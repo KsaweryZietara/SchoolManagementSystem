@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SystemLibrary;
+using SystemLibrary.DataAccess;
 using SystemLibrary.StudentAccountModels;
 
 namespace SystemUI.AdminUI {
@@ -27,12 +29,13 @@ namespace SystemUI.AdminUI {
 
             if (ValidPage()) {
                 
-                StudentModel student = new StudentModel(FirstNameTextBox.Text,
+                StudentModelSA student = new StudentModelSA(FirstNameTextBox.Text,
                     LastNameTextBox.Text,
                     EmailAddressTextBox.Text,
-                    PasswordTextBox.Text);
-                
+                    PasswordTextBox.Text.PasswordHashing());
 
+                IDataConnector dataConnector = new MySqlConnector();
+                dataConnector.AddStudent(student);
             }
         }
 

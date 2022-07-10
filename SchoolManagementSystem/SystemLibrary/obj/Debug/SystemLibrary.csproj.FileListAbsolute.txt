@@ -32,11 +32,5 @@ C:\Users\User\SchoolManagementSystem\SchoolManagementSystem\SystemLibrary\obj\De
 C:\Users\User\SchoolManagementSystem\SchoolManagementSystem\SystemLibrary\obj\Debug\SystemLibrary.csproj.CopyComplete
 C:\Users\User\SchoolManagementSystem\SchoolManagementSystem\SystemLibrary\obj\Debug\SystemLibrary.dll
 C:\Users\User\SchoolManagementSystem\SchoolManagementSystem\SystemLibrary\obj\Debug\SystemLibrary.pdb
-C:\Users\User\SchoolManagementSystem\SchoolManagementSystem\SystemLibrary\bin\Debug\EntityFramework.dll
-C:\Users\User\SchoolManagementSystem\SchoolManagementSystem\SystemLibrary\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\User\SchoolManagementSystem\SchoolManagementSystem\SystemLibrary\bin\Debug\MySql.Data.Entity.EF6.dll
-C:\Users\User\SchoolManagementSystem\SchoolManagementSystem\SystemLibrary\bin\Debug\MySql.Data.EntityFramework.dll
-C:\Users\User\SchoolManagementSystem\SchoolManagementSystem\SystemLibrary\bin\Debug\EntityFramework.xml
-C:\Users\User\SchoolManagementSystem\SchoolManagementSystem\SystemLibrary\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\User\SchoolManagementSystem\SchoolManagementSystem\SystemLibrary\bin\Debug\MySql.Data.Entity.EF6.xml
-C:\Users\User\SchoolManagementSystem\SchoolManagementSystem\SystemLibrary\bin\Debug\MySql.Data.EntityFramework.xml
+C:\Users\User\SchoolManagementSystem\SchoolManagementSystem\SystemLibrary\bin\Debug\Dapper.dll
+C:\Users\User\SchoolManagementSystem\SchoolManagementSystem\SystemLibrary\bin\Debug\Dapper.xml

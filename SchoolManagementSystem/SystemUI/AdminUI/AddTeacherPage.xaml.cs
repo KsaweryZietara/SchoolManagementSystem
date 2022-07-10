@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SystemLibrary;
+using SystemLibrary.DataAccess;
+using SystemLibrary.TeacherAccountModels;
 
 namespace SystemUI.AdminUI {
     /// <summary>
@@ -20,6 +23,57 @@ namespace SystemUI.AdminUI {
     public partial class AddTeacherPage : Page {
         public AddTeacherPage() {
             InitializeComponent();
+        }
+
+        private void AddTeacherButton_Click(object sender, RoutedEventArgs e) {
+            if (ValidPage()) {
+
+                TeacherModelTA teacher = new TeacherModelTA(FirstNameTextBox.Text,
+                    LastNameTextBox.Text,
+                    EmailAddressTextBox.Text,
+                    PasswordTextBox.Text.PasswordHashing());
+
+                IDataConnector dataConnector = new MySqlConnector();
+                dataConnector.AddTeacher(teacher);
+            }
+        }
+
+        private bool ValidPage() {
+
+            bool output = true;
+
+            if (FirstNameTextBox.Text.Length == 0) {
+                output = false;
+            }
+
+            if (LastNameTextBox.Text.Length == 0) {
+                output = false;
+            }
+
+            if (EmailAddressTextBox.Text.Length == 0) {
+                output = false;
+            }
+
+            int indexOfAt = EmailAddressTextBox.Text.IndexOf('@');
+            int indexOfDot = EmailAddressTextBox.Text.IndexOf('.');
+
+            if (indexOfAt < 0 || indexOfDot < 0) {
+                output = false;
+            }
+
+            if (indexOfAt > indexOfDot) {
+                output = false;
+            }
+
+            if (indexOfDot > EmailAddressTextBox.Text.Length - 4) {
+                output = false;
+            }
+
+            if (PasswordTextBox.Text.Length == 0) {
+                output = false;
+            }
+
+            return output;
         }
     }
 }

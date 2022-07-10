@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SystemLibrary;
+using SystemLibrary.AdminAccountModels;
+using SystemLibrary.DataAccess;
 
 namespace SystemUI.AdminUI {
     /// <summary>
@@ -20,6 +23,57 @@ namespace SystemUI.AdminUI {
     public partial class AddAdminPage : Page {
         public AddAdminPage() {
             InitializeComponent();
+        }
+
+        private void AddAdminButton_Click(object sender, RoutedEventArgs e) {
+            if (ValidPage()) {
+
+                AdminModel admin = new AdminModel(FirstNameTextBox.Text,
+                    LastNameTextBox.Text,
+                    EmailAddressTextBox.Text,
+                    PasswordTextBox.Text.PasswordHashing());
+
+                IDataConnector dataConnector = new MySqlConnector();
+                dataConnector.AddAdmin(admin);
+            }
+        }
+
+        private bool ValidPage() {
+
+            bool output = true;
+
+            if (FirstNameTextBox.Text.Length == 0) {
+                output = false;
+            }
+
+            if (LastNameTextBox.Text.Length == 0) {
+                output = false;
+            }
+
+            if (EmailAddressTextBox.Text.Length == 0) {
+                output = false;
+            }
+
+            int indexOfAt = EmailAddressTextBox.Text.IndexOf('@');
+            int indexOfDot = EmailAddressTextBox.Text.IndexOf('.');
+
+            if (indexOfAt < 0 || indexOfDot < 0) {
+                output = false;
+            }
+
+            if (indexOfAt > indexOfDot) {
+                output = false;
+            }
+
+            if (indexOfDot > EmailAddressTextBox.Text.Length - 4) {
+                output = false;
+            }
+
+            if (PasswordTextBox.Text.Length == 0) {
+                output = false;
+            }
+
+            return output;
         }
     }
 }
