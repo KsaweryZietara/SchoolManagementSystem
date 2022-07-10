@@ -32,7 +32,7 @@ namespace SystemUI.AdminUI {
                 StudentModelSA student = new StudentModelSA(FirstNameTextBox.Text,
                     LastNameTextBox.Text,
                     EmailAddressTextBox.Text,
-                    PasswordTextBox.Text.PasswordHashing());
+                    PasswordTextBox.Password.PasswordHashing());
 
                 IDataConnector dataConnector = new MySqlConnector();
                 dataConnector.AddStudent(student);
@@ -70,7 +70,7 @@ namespace SystemUI.AdminUI {
                 output = false;
             }
 
-            if (PasswordTextBox.Text.Length == 0) {
+            if (PasswordTextBox.Password.Length == 0) {
                 output = false;
             }
 

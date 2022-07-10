@@ -14,5 +14,11 @@ namespace SystemLibrary.DataAccess {
         void AddTeacher(TeacherModelTA teacherModel);
 
         void AddAdmin(AdminModel adminModel);
+
+        List<TeacherModelSA> GetTeachers();
+
+        List<StudentModelTA> GetStudents();
+
+        void AddCourse(CourseModelTA course, string teacherEmailAddress);
     }
 }

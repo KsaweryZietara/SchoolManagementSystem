@@ -38,7 +38,7 @@
         <TextBox x:Name="EmailAddressTextBox" Grid.Column="1" Grid.Row="6" Margin="0,5,0,0" FontSize="16"/>
         <TextBlock Grid.Column="1" Grid.Row="7" Text="Password" FontSize="26"
                     Foreground="DarkGray" Margin="0,10,0,0"/>
-        <TextBox x:Name="PasswordTextBox" Grid.Column="1" Grid.Row="8" Margin="0,5,0,0" FontSize="16"/>
+        <PasswordBox x:Name="PasswordTextBox" Grid.Column="1" Grid.Row="8" Margin="0,5,0,0" FontSize="16"/>
         <Button x:Name="AddAdminButton" Grid.Column="1" Grid.Row="9" Margin="0,20" Content="Add admin" Background="#FF007FFF" FontSize="20" Foreground="White" Click="AddAdminButton_Click"/>
     </Grid>
 </Page>

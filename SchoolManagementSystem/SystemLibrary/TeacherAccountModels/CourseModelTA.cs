@@ -26,5 +26,12 @@ namespace SystemLibrary.TeacherAccountModels {
         /// Represents students which attend to course.
         /// </summary>
         public List<StudentModelTA> Students { get; set; } = new List<StudentModelTA>();
+
+        public CourseModelTA(string name, DateTime startDate, DateTime endDate, List<StudentModelTA> students) {
+            Name = name;
+            StartDate = startDate;
+            EndDate = endDate;
+            Students = students;
+        }
     }
 }

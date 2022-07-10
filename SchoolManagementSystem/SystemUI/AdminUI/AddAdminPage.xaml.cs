@@ -31,7 +31,7 @@ namespace SystemUI.AdminUI {
                 AdminModel admin = new AdminModel(FirstNameTextBox.Text,
                     LastNameTextBox.Text,
                     EmailAddressTextBox.Text,
-                    PasswordTextBox.Text.PasswordHashing());
+                    PasswordTextBox.Password.PasswordHashing());
 
                 IDataConnector dataConnector = new MySqlConnector();
                 dataConnector.AddAdmin(admin);
@@ -69,7 +69,7 @@ namespace SystemUI.AdminUI {
                 output = false;
             }
 
-            if (PasswordTextBox.Text.Length == 0) {
+            if (PasswordTextBox.Password.Length == 0) {
                 output = false;
             }
 

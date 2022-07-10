@@ -69,5 +69,65 @@ namespace SystemLibrary.DataAccess {
                 MessageBox.Show($"{ex.Message}", "Error");
             }
         }
+
+        public List<TeacherModelSA> GetTeachers() {
+
+            List<TeacherModelSA> teachers = new List<TeacherModelSA>();
+
+            try {
+
+                MySqlConnection connection = new MySqlConnection(Constr);
+
+                connection.Open();
+
+                teachers = connection.Query<TeacherModelSA>("select * from teachers").ToList();
+
+            }
+            catch {
+            }
+            return teachers;
+        }
+
+        public List<StudentModelTA> GetStudents() {
+
+            List<StudentModelTA> students = new List<StudentModelTA>();
+
+            try {
+
+                MySqlConnection connection = new MySqlConnection(Constr);
+
+                connection.Open();
+
+                students = connection.Query<StudentModelTA>("select * from students").ToList();
+
+            }
+            catch {
+            }
+            return students;
+        }
+
+        public void AddCourse(CourseModelTA course, string teacherEmailAddress) {
+            try {
+                
+                MySqlConnection connection = new MySqlConnection(Constr);
+
+                string sqlQuery1 = $"INSERT INTO courses(Name, StartDate, EndDate) VALUES(@Name, @StartDate, @EndDate)";
+                var rowsAffected1 = connection.Execute(sqlQuery1, course);
+
+                string sql = $"UPDATE courses SET TeacherEmailAddress = '{teacherEmailAddress}' WHERE Name = '{course.Name}'";
+                var rowsAffected2 = connection.Execute(sql);
+
+                foreach (StudentModelTA s in course.Students) {
+                    var StudentEmailAddress = s.EmailAddress;
+                    var CourseName = course.Name;
+                    connection.Execute("insert into studentcourserelation(StudentEmailAddress, CourseName) values (@StudentEmailAddress, @CourseName)", new { StudentEmailAddress, CourseName });
+                }
+
+                MessageBox.Show("Course has been added.", "My App");
+            }
+            catch (Exception ex) {
+                MessageBox.Show($"{ex.Message}", "Error");
+            }
+        }
     }
 }
