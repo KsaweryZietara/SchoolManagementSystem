@@ -31,5 +31,9 @@ namespace SystemLibrary.DataAccess {
         List<string> GetUsersEmails();
 
         void CreateMessage(MessageModel message);
+
+        List<MessageModel> GetReceivedMessages(string emailAddress);
+
+        List<MessageModel> GetSentMessages(string emailAddress);
     }
 }

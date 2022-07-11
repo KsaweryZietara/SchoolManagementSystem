@@ -32,6 +32,14 @@ namespace SystemLibrary.CommonModels {
         /// </summary>
         public string Content { get; set; }
 
+        public MessageModel(string senderEmailAddress, string receiverEmailAddress, DateTime date, string title, string content) {
+            SenderEmailAddress = senderEmailAddress;
+            ReceiverEmailAddress = receiverEmailAddress;
+            Date = date;
+            Title = title;
+            Content = content;
+        }
+
         public MessageModel(string senderEmailAddress, string receiverEmailAddress, string title, string content) {
             SenderEmailAddress = senderEmailAddress;
             ReceiverEmailAddress = receiverEmailAddress;

@@ -241,5 +241,39 @@ namespace SystemLibrary.DataAccess {
                 MessageBox.Show($"{ex.Message}", "Error");
             }
         }
+
+        public List<MessageModel> GetReceivedMessages(string emailAddress) {
+
+            List<MessageModel> messages = new List<MessageModel>();
+
+            try {
+                MySqlConnection connection = new MySqlConnection(Constr);
+
+                connection.Open();
+
+                messages = connection.Query<MessageModel>($"select SenderEmailAddress, ReceiverEmailAddress, Date, Title, Content from messages where ReceiverEmailAddress = '{emailAddress}' order by date").ToList();
+            }
+            catch {
+            }
+
+            return messages;
+        }
+
+        public List<MessageModel> GetSentMessages(string emailAddress) {
+            
+            List<MessageModel> messages = new List<MessageModel>();
+
+            try {
+                MySqlConnection connection = new MySqlConnection(Constr);
+
+                connection.Open();
+
+                messages = connection.Query<MessageModel>($"select SenderEmailAddress, ReceiverEmailAddress, Date, Title, Content from messages where SenderEmailAddress = '{emailAddress}' order by date").ToList();
+            }
+            catch {
+            }
+
+            return messages;
+        }
     }
 }

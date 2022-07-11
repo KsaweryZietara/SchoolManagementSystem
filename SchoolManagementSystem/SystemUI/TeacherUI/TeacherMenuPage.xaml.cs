@@ -34,11 +34,11 @@ namespace SystemUI.TeacherUI {
         }
 
         private void ReceivedMessagesButton_Click(object sender, RoutedEventArgs e) {
-            MenuOptions.NavigationService.Navigate(new ReceivedMessagesPage());
+            MenuOptions.NavigationService.Navigate(new ReceivedMessagesPage(Teacher));
         }
 
         private void SentMessagesButton_Click(object sender, RoutedEventArgs e) {
-            MenuOptions.NavigationService.Navigate(new SentMessagesPage());
+            MenuOptions.NavigationService.Navigate(new SentMessagesPage(Teacher));
         }
 
         private void NewMessageButton_Click(object sender, RoutedEventArgs e) {
