@@ -70,17 +70,23 @@
     <Compile Include="AdminUI\AddStudentPage.xaml.cs">
       <DependentUpon>AddStudentPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UsersUI\NewMessagePage.xaml.cs">
+    <Compile Include="CommonUI\NewMessagePage.xaml.cs">
       <DependentUpon>NewMessagePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UsersUI\ReceivedMessagesPage.xaml.cs">
+    <Compile Include="CommonUI\ReceivedMessagesPage.xaml.cs">
       <DependentUpon>ReceivedMessagesPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UsersUI\SentMessagesPage.xaml.cs">
+    <Compile Include="CommonUI\SentMessagesPage.xaml.cs">
       <DependentUpon>SentMessagesPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UsersUI\StudentCoursesPage.xaml.cs">
+    <Compile Include="StudentUI\StudentCoursesPage.xaml.cs">
       <DependentUpon>StudentCoursesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherUI\TeacherCoursesPage.xaml.cs">
+      <DependentUpon>TeacherCoursesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherUI\TeacherMenuPage.xaml.cs">
+      <DependentUpon>TeacherMenuPage.xaml</DependentUpon>
     </Compile>
     <Page Include="AdminUI\AddAdminPage.xaml">
       <SubType>Designer</SubType>
@@ -121,30 +127,38 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="UsersUI\MenuPage.xaml">
+    <Page Include="StudentUI\StudentMenuPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UsersUI\NewMessagePage.xaml">
+    <Page Include="CommonUI\NewMessagePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UsersUI\ReceivedMessagesPage.xaml">
+    <Page Include="CommonUI\ReceivedMessagesPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UsersUI\SentMessagesPage.xaml">
+    <Page Include="CommonUI\SentMessagesPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UsersUI\StudentCoursesPage.xaml">
+    <Page Include="StudentUI\StudentCoursesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TeacherUI\TeacherCoursesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TeacherUI\TeacherMenuPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UsersUI\MenuPage.xaml.cs">
-      <DependentUpon>MenuPage.xaml</DependentUpon>
+    <Compile Include="StudentUI\StudentMenuPage.xaml.cs">
+      <DependentUpon>StudentMenuPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -177,5 +191,6 @@
       <Name>SystemLibrary</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

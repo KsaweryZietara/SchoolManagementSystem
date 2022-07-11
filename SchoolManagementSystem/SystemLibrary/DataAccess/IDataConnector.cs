@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SystemLibrary.AdminAccountModels;
+using SystemLibrary.CommonModels;
 using SystemLibrary.StudentAccountModels;
 using SystemLibrary.TeacherAccountModels;
 
@@ -20,5 +21,15 @@ namespace SystemLibrary.DataAccess {
         List<StudentModelTA> GetStudents();
 
         void AddCourse(CourseModelTA course, string teacherEmailAddress);
+
+        StudentModelSA ValidStudentPassword(string emailAddress, string password);
+
+        TeacherModelTA ValidTeacherPassword(string emailAddress, string password);
+
+        AdminModel ValidAdminPassword(string emailAddress, string password);
+
+        List<string> GetUsersEmails();
+
+        void CreateMessage(MessageModel message);
     }
 }

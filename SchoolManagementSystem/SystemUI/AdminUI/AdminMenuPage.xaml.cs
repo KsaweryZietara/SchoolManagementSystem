@@ -12,14 +12,18 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SystemLibrary.AdminAccountModels;
 
 namespace SystemUI.AdminUI {
     /// <summary>
     /// Logika interakcji dla klasy AdminMenuPage.xaml
     /// </summary>
     public partial class AdminMenuPage : Page {
-        public AdminMenuPage() {
+        public AdminModel Admin { get; set; }
+
+        public AdminMenuPage(AdminModel admin) {
             InitializeComponent();
+            Admin = admin;
             AdminMenuOptions.Navigate(new AddStudentPage());
         }
 

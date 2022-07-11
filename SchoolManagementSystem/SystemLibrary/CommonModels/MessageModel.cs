@@ -10,12 +10,12 @@ namespace SystemLibrary.CommonModels {
         /// <summary>
         /// Represents email address of the sender.
         /// </summary>
-        public int SenderEmailAddress { get; set; }
+        public string SenderEmailAddress { get; set; }
 
         /// <summary>
         /// Represents email address of the receiver.
         /// </summary>
-        public int ReceiverEmailAddress { get; set; }
+        public string ReceiverEmailAddress { get; set; }
 
         /// <summary>
         /// Represents date of the message sending.
@@ -31,5 +31,14 @@ namespace SystemLibrary.CommonModels {
         /// Represents content of the message.
         /// </summary>
         public string Content { get; set; }
+
+        public MessageModel(string senderEmailAddress, string receiverEmailAddress, string title, string content) {
+            SenderEmailAddress = senderEmailAddress;
+            ReceiverEmailAddress = receiverEmailAddress;
+            Title = title;
+            Content = content;
+
+            Date = DateTime.Now;
+        }
     }
 }

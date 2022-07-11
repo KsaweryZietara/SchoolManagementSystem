@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SystemUI.UsersUI {
+namespace SystemUI.CommonUI {
     /// <summary>
     /// Logika interakcji dla klasy SentMessagesPage.xaml
     /// </summary>

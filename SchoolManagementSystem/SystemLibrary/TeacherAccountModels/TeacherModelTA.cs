@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using SystemLibrary.CommonModels;
 
 namespace SystemLibrary.TeacherAccountModels {
-    public class TeacherModelTA {
+    public class TeacherModelTA : UserModel {
 
         /// <summary>
         /// Represents first name of the teacher. 

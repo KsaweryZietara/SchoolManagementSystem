@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\User\SchoolManagementSystem\SchoolManagementSystem\SystemUI\App.xaml
-12-281849646
+14878143327
 
-17500270485
+19-813003221
 14-286015990
-AdminUI\AddAdminPage.xaml;AdminUI\AddCoursePage.xaml;AdminUI\AddTeacherPage.xaml;AdminUI\AdminMenuPage.xaml;AdminUI\AddStudentPage.xaml;LoginPage.xaml;MainWindow.xaml;UsersUI\MenuPage.xaml;UsersUI\NewMessagePage.xaml;UsersUI\ReceivedMessagesPage.xaml;UsersUI\SentMessagesPage.xaml;UsersUI\StudentCoursesPage.xaml;
+AdminUI\AddAdminPage.xaml;AdminUI\AddCoursePage.xaml;AdminUI\AddTeacherPage.xaml;AdminUI\AdminMenuPage.xaml;AdminUI\AddStudentPage.xaml;LoginPage.xaml;MainWindow.xaml;StudentUI\StudentMenuPage.xaml;CommonUI\NewMessagePage.xaml;CommonUI\ReceivedMessagesPage.xaml;CommonUI\SentMessagesPage.xaml;StudentUI\StudentCoursesPage.xaml;TeacherUI\TeacherCoursesPage.xaml;TeacherUI\TeacherMenuPage.xaml;
 
 True
 

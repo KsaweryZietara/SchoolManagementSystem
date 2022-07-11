@@ -12,19 +12,25 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SystemLibrary.TeacherAccountModels;
+using SystemUI.CommonUI;
 
-namespace SystemUI.UsersUI {
+namespace SystemUI.TeacherUI {
     /// <summary>
-    /// Logika interakcji dla klasy MenuPage.xaml
+    /// Logika interakcji dla klasy TeacherMenuPage.xaml
     /// </summary>
-    public partial class MenuPage : Page {
-        public MenuPage() {
+    public partial class TeacherMenuPage : Page {
+
+        public TeacherModelTA Teacher { get; set; }
+
+        public TeacherMenuPage(TeacherModelTA teacher) {
             InitializeComponent();
-            MenuOptions.NavigationService.Navigate(new StudentCoursesPage());
+            Teacher = teacher;
+            MenuOptions.NavigationService.Navigate(new TeacherCoursesPage());
         }
 
         private void CoursesButton_Click(object sender, RoutedEventArgs e) {
-            MenuOptions.NavigationService.Navigate(new StudentCoursesPage());
+            MenuOptions.NavigationService.Navigate(new TeacherCoursesPage());
         }
 
         private void ReceivedMessagesButton_Click(object sender, RoutedEventArgs e) {
@@ -36,7 +42,7 @@ namespace SystemUI.UsersUI {
         }
 
         private void NewMessageButton_Click(object sender, RoutedEventArgs e) {
-            MenuOptions.NavigationService.Navigate(new NewMessagePage());
+            MenuOptions.NavigationService.Navigate(new NewMessagePage(Teacher));
         }
     }
 }

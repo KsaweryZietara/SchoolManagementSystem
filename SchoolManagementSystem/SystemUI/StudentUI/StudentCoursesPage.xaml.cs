@@ -13,12 +13,12 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SystemUI.UsersUI {
+namespace SystemUI.StudentUI {
     /// <summary>
-    /// Logika interakcji dla klasy NewMessagePage.xaml
+    /// Logika interakcji dla klasy StudentCoursesPage.xaml
     /// </summary>
-    public partial class NewMessagePage : Page {
-        public NewMessagePage() {
+    public partial class StudentCoursesPage : Page {
+        public StudentCoursesPage() {
             InitializeComponent();
         }
     }
