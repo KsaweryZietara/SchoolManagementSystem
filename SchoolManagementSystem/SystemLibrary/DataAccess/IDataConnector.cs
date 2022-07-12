@@ -35,5 +35,13 @@ namespace SystemLibrary.DataAccess {
         List<MessageModel> GetReceivedMessages(string emailAddress);
 
         List<MessageModel> GetSentMessages(string emailAddress);
+
+        List<CourseModelTA> GetTeacherCourses(string emailAddress);
+
+        List<StudentModelTA> GetStudentsSignedToCourse(string courseName);
+
+        List<GradeModel> GetStudentGradesFromCourse(string emailAddress, string courseName);
+
+        void CreateGrade(GradeModel grade, string courseName, string emailAddress);
     }
 }

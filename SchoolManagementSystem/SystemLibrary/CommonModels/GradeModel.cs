@@ -16,5 +16,10 @@ namespace SystemLibrary.CommonModels {
         /// Represents value of the grade.
         /// </summary>
         public int Value { get; set; }
+
+        public GradeModel(string name, int value) {
+            Name = name;
+            Value = value;
+        }
     }
 }

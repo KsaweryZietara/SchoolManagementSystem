@@ -26,11 +26,11 @@ namespace SystemUI.TeacherUI {
         public TeacherMenuPage(TeacherModelTA teacher) {
             InitializeComponent();
             Teacher = teacher;
-            MenuOptions.NavigationService.Navigate(new TeacherCoursesPage());
+            MenuOptions.NavigationService.Navigate(new TeacherCoursesPage(Teacher));
         }
 
         private void CoursesButton_Click(object sender, RoutedEventArgs e) {
-            MenuOptions.NavigationService.Navigate(new TeacherCoursesPage());
+            MenuOptions.NavigationService.Navigate(new TeacherCoursesPage(Teacher));
         }
 
         private void ReceivedMessagesButton_Click(object sender, RoutedEventArgs e) {

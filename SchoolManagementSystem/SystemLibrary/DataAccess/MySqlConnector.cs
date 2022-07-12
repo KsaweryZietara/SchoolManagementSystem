@@ -275,5 +275,85 @@ namespace SystemLibrary.DataAccess {
 
             return messages;
         }
+
+        public List<CourseModelTA> GetTeacherCourses(string emailAddress) {
+
+            List<CourseModelTA> courses = new List<CourseModelTA>();
+
+            MySqlConnection connection = new MySqlConnection(Constr);
+
+            connection.Open();
+
+            courses = connection.Query<CourseModelTA>($"select Name, StartDate, EndDate " +
+                $"from courses " +
+                $"where TeacherEmailAddress = '{emailAddress}' " +
+                $"order by StartDate").ToList();
+
+            foreach (CourseModelTA course in courses) {
+
+                course.Students = GetStudentsSignedToCourse(course.Name);
+
+                foreach (StudentModelTA student in course.Students) {
+                    student.Grades = GetStudentGradesFromCourse(student.EmailAddress, course.Name);
+                }
+            }
+
+            return courses;
+        }
+
+        public List<StudentModelTA> GetStudentsSignedToCourse(string courseName) {
+
+            List<StudentModelTA> students = new List<StudentModelTA>();
+
+            MySqlConnection connection = new MySqlConnection(Constr);
+
+            connection.Open();
+
+            students = connection.Query<StudentModelTA>($"select StudentEmailAddress as EmailAddress " +
+                    $"from studentcourserelation " +
+                    $"where CourseName = '{courseName}'").ToList();
+
+            foreach (StudentModelTA student in students) {
+
+                student.FirstName = connection.Query<string>($"select FirstName " +
+                    $"from students " +
+                    $"where EmailAddress = '{student.EmailAddress}'").First();
+
+                student.LastName = connection.Query<string>($"select LastName " +
+                    $"from students " +
+                    $"where EmailAddress = '{student.EmailAddress}'").First();
+            }
+
+            return students;
+        }
+
+        public List<GradeModel> GetStudentGradesFromCourse(string emailAddress, string courseName) {
+            
+            List<GradeModel> grades = new List<GradeModel>();
+
+            MySqlConnection connection = new MySqlConnection(Constr);
+
+            connection.Open();
+
+            grades = connection.Query<GradeModel>($"select Name, Value " +
+                    $"from grades " +
+                    $"where CourseName = '{courseName}' and StudentEmailAddress = '{emailAddress}'").ToList();
+
+            return grades;
+        }
+
+        public void CreateGrade(GradeModel grade, string courseName, string emailAddress) {
+
+            MySqlConnection connection = new MySqlConnection(Constr);
+
+            var Name = grade.Name;
+            var Value = grade.Value;
+            var CourseName = courseName;
+            var StudentEmailAddress = emailAddress;
+
+            connection.Execute("insert into grades(Name, Value, CourseName, StudentEmailAddress) " +
+                "values (@Name, @Value, @CourseName, @StudentEmailAddress)",
+                new { Name, Value, CourseName, StudentEmailAddress });
+        }
     }
 }
