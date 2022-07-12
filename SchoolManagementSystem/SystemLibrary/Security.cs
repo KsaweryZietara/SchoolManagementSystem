@@ -6,7 +6,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SystemLibrary {
+
+    /// <summary>
+    /// Deals with security related to logging in.
+    /// </summary>
     public static class Security {
+
         /// <summary>
         /// Function hash the password.
         /// </summary>

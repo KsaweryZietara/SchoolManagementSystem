@@ -16,14 +16,23 @@ using SystemLibrary.CommonModels;
 using SystemLibrary.DataAccess;
 
 namespace SystemUI.CommonUI {
+
     /// <summary>
     /// Logika interakcji dla klasy SentMessagesPage.xaml
     /// </summary>
     public partial class SentMessagesPage : Page {
 
-        public UserModel User { get; set; }
+        /// <summary>
+        /// Represents user which is logged in.
+        /// </summary>
+        public IUserModel User { get; set; }
 
-        public SentMessagesPage(UserModel user) {
+        /// <summary>
+        /// Initializes a new instance of the SentMessagesPage class, sets User property
+        /// and poplizes the list box.
+        /// </summary>
+        /// <param name="user">User which logged in.</param>
+        public SentMessagesPage(IUserModel user) {
 
             InitializeComponent();
             User = user;
@@ -37,8 +46,12 @@ namespace SystemUI.CommonUI {
             EmailText.Text = "To:\nTitle:";
         }
 
+        /// <summary>
+        /// Fills email text label and email text box.
+        /// </summary>
         private void EmailsListBox_MouseDoubleClick(object sender, MouseButtonEventArgs e) {
-            EmailText.Text = $"To: {User.Messages[EmailsListBox.SelectedIndex].ReceiverEmailAddress}\nTitle: {User.Messages[EmailsListBox.SelectedIndex].Title}";
+            EmailText.Text = $"To: {User.Messages[EmailsListBox.SelectedIndex].ReceiverEmailAddress}\nTitle: " +
+                $"{User.Messages[EmailsListBox.SelectedIndex].Title}";
             EmailBox.Text = User.Messages[EmailsListBox.SelectedIndex].Content;
         }
     }

@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 using SystemLibrary.CommonModels;
 
 namespace SystemLibrary.StudentAccountModels {
-    public class StudentModelSA : UserModel {
+
+    /// <summary>
+    /// Represents student in student account.
+    /// </summary>
+    public class StudentModelSA : IUserModel {
 
         /// <summary>
         /// Represents first name of the student. 
@@ -38,9 +42,19 @@ namespace SystemLibrary.StudentAccountModels {
         /// </summary>
         public List<CourseModelSA> Courses { get; set; } = new List<CourseModelSA>();
 
+        /// <summary>
+        /// Initializes a new instance of the StudentModelSA class.
+        /// </summary>
         public StudentModelSA() {
         }
 
+        /// <summary>
+        /// Initializes a new instance of the StudentModelSA class.
+        /// </summary>
+        /// <param name="firstName">First name of the student.</param>
+        /// <param name="lastName">Last name of the student.</param>
+        /// <param name="emailAddress">Email address of the student.</param>
+        /// <param name="password">Password of the student.</param>
         public StudentModelSA(string firstName, string lastName, string emailAddress, string password) {
             FirstName = firstName;
             LastName = lastName;

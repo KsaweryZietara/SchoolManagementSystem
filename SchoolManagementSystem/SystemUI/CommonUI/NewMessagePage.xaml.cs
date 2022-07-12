@@ -16,19 +16,32 @@ using SystemLibrary.CommonModels;
 using SystemLibrary.DataAccess;
 
 namespace SystemUI.CommonUI {
+
     /// <summary>
     /// Logika interakcji dla klasy NewMessagePage.xaml
     /// </summary>
     public partial class NewMessagePage : Page {
-        public UserModel User { get; set; }
 
-        public NewMessagePage(UserModel user) {
+        /// <summary>
+        /// Represents user which is logged in.
+        /// </summary>
+        public IUserModel User { get; set; }
+
+        /// <summary>
+        /// Initializes a new instance of the NewMessagePage class, sets User property
+        /// and fills combo box with emails.
+        /// </summary>
+        /// <param name="user">User which logged in.</param>
+        public NewMessagePage(IUserModel user) {
             InitializeComponent();
             User = user;
             IDataConnector dataConnector = new MySqlConnector();
             EmailsComboBox.ItemsSource = dataConnector.GetUsersEmails();
         }
 
+        /// <summary>
+        /// Saves message to database.
+        /// </summary>
         private void Button_Click(object sender, RoutedEventArgs e) {
 
             if (ValidPage()) {
@@ -42,6 +55,10 @@ namespace SystemUI.CommonUI {
             }
         }
 
+        /// <summary>
+        /// Checks wheter the text boxes from page are valid.
+        /// </summary>
+        /// <returns>True if the text boxes form page are valid, false if not.</returns>
         private bool ValidPage() {
             bool output = true;
 

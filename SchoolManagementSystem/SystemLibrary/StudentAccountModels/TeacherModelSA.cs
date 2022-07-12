@@ -5,6 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SystemLibrary.StudentAccountModels {
+
+    /// <summary>
+    /// Represents teacher in student account.
+    /// </summary>
     public class TeacherModelSA {
 
         /// <summary>

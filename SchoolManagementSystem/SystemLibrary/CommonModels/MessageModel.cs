@@ -5,6 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SystemLibrary.CommonModels {
+
+    /// <summary>
+    /// Represents message.
+    /// </summary>
     public class MessageModel {
 
         /// <summary>
@@ -32,6 +36,14 @@ namespace SystemLibrary.CommonModels {
         /// </summary>
         public string Content { get; set; }
 
+        /// <summary>
+        /// Initializes a new instance of the MessageModel class.
+        /// </summary>
+        /// <param name="senderEmailAddress">Email address of the sender.</param>
+        /// <param name="receiverEmailAddress">Email address of the receiver.</param>
+        /// <param name="date">Date of the message sending.</param>
+        /// <param name="title">Title of the message</param>
+        /// <param name="content">Content of the message.</param>
         public MessageModel(string senderEmailAddress, string receiverEmailAddress, DateTime date, string title, string content) {
             SenderEmailAddress = senderEmailAddress;
             ReceiverEmailAddress = receiverEmailAddress;
@@ -40,6 +52,13 @@ namespace SystemLibrary.CommonModels {
             Content = content;
         }
 
+        /// <summary>
+        /// Initializes a new instance of the MessageModel class.
+        /// </summary>
+        /// <param name="senderEmailAddress">Email address of the sender.</param>
+        /// <param name="receiverEmailAddress">Email address of the receiver.</param>
+        /// <param name="title">Title of the message</param>
+        /// <param name="content">Content of the message.</param>
         public MessageModel(string senderEmailAddress, string receiverEmailAddress, string title, string content) {
             SenderEmailAddress = senderEmailAddress;
             ReceiverEmailAddress = receiverEmailAddress;

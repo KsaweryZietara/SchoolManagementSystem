@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 using SystemLibrary.CommonModels;
 
 namespace SystemLibrary.TeacherAccountModels {
+
+    /// <summary>
+    /// Represents student in teacher account.
+    /// </summary>
     public class StudentModelTA {
         
         /// <summary>

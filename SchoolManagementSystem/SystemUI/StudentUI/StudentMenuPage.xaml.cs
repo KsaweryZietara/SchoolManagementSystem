@@ -16,30 +16,52 @@ using SystemLibrary.StudentAccountModels;
 using SystemUI.CommonUI;
 
 namespace SystemUI.StudentUI {
+
     /// <summary>
     /// Logika interakcji dla klasy MenuPage.xaml
     /// </summary>
     public partial class StudentMenuPage : Page {
+
+        /// <summary>
+        /// Represents student which is logged in.
+        /// </summary>
         public StudentModelSA Student { get; set; }
 
+        /// <summary>
+        /// Initializes a new instance of the StudentMenuPage class, sets Student
+        /// property to logged student and change MenuOptions to StudentCoursesPage.
+        /// </summary>
+        /// <param name="student">Student which is logged in.</param>
         public StudentMenuPage(StudentModelSA student) {
             InitializeComponent();
             Student = student;
-            MenuOptions.NavigationService.Navigate(new StudentCoursesPage());
+            MenuOptions.NavigationService.Navigate(new StudentCoursesPage(Student));
         }
 
+        /// <summary>
+        /// Change MenuOptions to StudentCoursesPage.
+        /// </summary>
         private void CoursesButton_Click(object sender, RoutedEventArgs e) {
-            MenuOptions.NavigationService.Navigate(new StudentCoursesPage());
+            MenuOptions.NavigationService.Navigate(new StudentCoursesPage(Student));
         }
 
+        /// <summary>
+        /// Change MenuOptions to ReceivedMessagesPage.
+        /// </summary>
         private void ReceivedMessagesButton_Click(object sender, RoutedEventArgs e) {
             MenuOptions.NavigationService.Navigate(new ReceivedMessagesPage(Student));
         }
 
+        /// <summary>
+        /// Change MenuOptions to SentMessagesPage.
+        /// </summary>
         private void SentMessagesButton_Click(object sender, RoutedEventArgs e) {
             MenuOptions.NavigationService.Navigate(new SentMessagesPage(Student));
         }
 
+        /// <summary>
+        /// Change MenuOptions to NewMessagePage.
+        /// </summary>
         private void NewMessageButton_Click(object sender, RoutedEventArgs e) {
             MenuOptions.NavigationService.Navigate(new NewMessagePage(Student));
         }

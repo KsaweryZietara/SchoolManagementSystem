@@ -17,14 +17,22 @@ using SystemLibrary.DataAccess;
 using SystemLibrary.StudentAccountModels;
 
 namespace SystemUI.AdminUI {
+
     /// <summary>
     /// Logika interakcji dla klasy AddStudentPage.xaml
     /// </summary>
     public partial class AddStudentPage : Page {
+
+        /// <summary>
+        /// Initializes a new instance of the AddStudentPage class.
+        /// </summary>
         public AddStudentPage() {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Saves student account to database.
+        /// </summary>
         private void AddStudentButton_Click(object sender, RoutedEventArgs e) {
 
             if (ValidPage()) {
@@ -39,6 +47,10 @@ namespace SystemUI.AdminUI {
             }
         }
 
+        /// <summary>
+        /// Checks wheter the text boxes from page are valid.
+        /// </summary>
+        /// <returns>True if the text boxes form page are valid, false if not.</returns>
         private bool ValidPage() {
 
             bool output = true;

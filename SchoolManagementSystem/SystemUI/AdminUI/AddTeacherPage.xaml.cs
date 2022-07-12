@@ -17,14 +17,22 @@ using SystemLibrary.DataAccess;
 using SystemLibrary.TeacherAccountModels;
 
 namespace SystemUI.AdminUI {
+
     /// <summary>
     /// Logika interakcji dla klasy AddTeacherPage.xaml
     /// </summary>
     public partial class AddTeacherPage : Page {
+
+        /// <summary>
+        /// Initializes a new instance of the AddTeacherPage class.
+        /// </summary>
         public AddTeacherPage() {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Saves teacher account to database.
+        /// </summary>
         private void AddTeacherButton_Click(object sender, RoutedEventArgs e) {
             if (ValidPage()) {
 
@@ -38,6 +46,10 @@ namespace SystemUI.AdminUI {
             }
         }
 
+        /// <summary>
+        /// Checks wheter the text boxes from page are valid.
+        /// </summary>
+        /// <returns>True if the text boxes form page are valid, false if not.</returns>
         private bool ValidPage() {
 
             bool output = true;

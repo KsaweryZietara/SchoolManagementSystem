@@ -98,7 +98,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminAccountModels\AdminModel.cs" />
-    <Compile Include="CommonModels\UserModel.cs" />
+    <Compile Include="CommonModels\IUserModel.cs" />
     <Compile Include="DataAccess\IDataConnector.cs" />
     <Compile Include="DataAccess\MySqlConnector.cs" />
     <Compile Include="Security.cs" />

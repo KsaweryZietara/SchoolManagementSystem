@@ -16,13 +16,23 @@ using SystemLibrary.CommonModels;
 using SystemLibrary.DataAccess;
 
 namespace SystemUI.CommonUI {
+
     /// <summary>
     /// Logika interakcji dla klasy ReceivedMessagesPage.xaml
     /// </summary>
     public partial class ReceivedMessagesPage : Page {
 
-        public UserModel User { get; set; }
-        public ReceivedMessagesPage(UserModel user) {
+        /// <summary>
+        /// Represents user which is logged in.
+        /// </summary>
+        public IUserModel User { get; set; }
+
+        /// <summary>
+        /// Initializes a new instance of the ReceivedMessagesPage class, sets User property
+        /// and poplizes the list box.
+        /// </summary>
+        /// <param name="user">User which logged in.</param>
+        public ReceivedMessagesPage(IUserModel user) {
             InitializeComponent();
             User = user;
 
@@ -35,8 +45,12 @@ namespace SystemUI.CommonUI {
             EmailText.Text = "From:\nTitle:";
         }
 
+        /// <summary>
+        /// Fills email text label and email text box.
+        /// </summary>
         private void EmailsListBox_MouseDoubleClick(object sender, MouseButtonEventArgs e) {
-            EmailText.Text = $"From: {User.Messages[EmailsListBox.SelectedIndex].SenderEmailAddress}\nTitle: {User.Messages[EmailsListBox.SelectedIndex].Title}";
+            EmailText.Text = $"From: {User.Messages[EmailsListBox.SelectedIndex].SenderEmailAddress}\nTitle: " +
+                $"{User.Messages[EmailsListBox.SelectedIndex].Title}";
             EmailBox.Text = User.Messages[EmailsListBox.SelectedIndex].Content;
         }
     }

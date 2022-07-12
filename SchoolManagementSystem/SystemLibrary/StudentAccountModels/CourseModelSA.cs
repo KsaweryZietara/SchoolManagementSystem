@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 using SystemLibrary.CommonModels;
 
 namespace SystemLibrary.StudentAccountModels {
+
+    /// <summary>
+    /// Represents course in student account.
+    /// </summary>
     public class CourseModelSA {
 
         /// <summary>

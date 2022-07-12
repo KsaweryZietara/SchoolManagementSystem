@@ -27,10 +27,10 @@ C:\Users\User\SchoolManagementSystem\SchoolManagementSystem\SystemLibrary\bin\De
 C:\Users\User\SchoolManagementSystem\SchoolManagementSystem\SystemLibrary\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\User\SchoolManagementSystem\SchoolManagementSystem\SystemLibrary\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\User\SchoolManagementSystem\SchoolManagementSystem\SystemLibrary\bin\Debug\System.Threading.Tasks.Extensions.xml
-C:\Users\User\SchoolManagementSystem\SchoolManagementSystem\SystemLibrary\obj\Debug\SystemLibrary.csproj.AssemblyReference.cache
 C:\Users\User\SchoolManagementSystem\SchoolManagementSystem\SystemLibrary\obj\Debug\SystemLibrary.csproj.CoreCompileInputs.cache
 C:\Users\User\SchoolManagementSystem\SchoolManagementSystem\SystemLibrary\obj\Debug\SystemLibrary.csproj.CopyComplete
 C:\Users\User\SchoolManagementSystem\SchoolManagementSystem\SystemLibrary\obj\Debug\SystemLibrary.dll
 C:\Users\User\SchoolManagementSystem\SchoolManagementSystem\SystemLibrary\obj\Debug\SystemLibrary.pdb
 C:\Users\User\SchoolManagementSystem\SchoolManagementSystem\SystemLibrary\bin\Debug\Dapper.dll
 C:\Users\User\SchoolManagementSystem\SchoolManagementSystem\SystemLibrary\bin\Debug\Dapper.xml
+C:\Users\User\SchoolManagementSystem\SchoolManagementSystem\SystemLibrary\obj\Debug\SystemLibrary.csproj.AssemblyReference.cache

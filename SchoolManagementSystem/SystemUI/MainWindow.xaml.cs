@@ -15,10 +15,16 @@ using System.Windows.Shapes;
 using SystemLibrary.DataAccess;
 
 namespace SystemUI {
+
     /// <summary>
     /// Logika interakcji dla klasy MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window {
+
+        /// <summary>
+        /// Initializes a new instance of the MainWindow class and
+        /// change Main to LoginPage.
+        /// </summary>
         public MainWindow() {
             InitializeComponent();
             Main.NavigationService.Navigate(new LoginPage());

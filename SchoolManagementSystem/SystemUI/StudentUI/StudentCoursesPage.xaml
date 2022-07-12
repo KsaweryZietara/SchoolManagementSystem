@@ -5,10 +5,20 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:SystemUI"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800" Background="Green"
+      d:DesignHeight="450" d:DesignWidth="800" Background="White" 
       Title="StudentCoursesPage">
 
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <ListView x:Name="CoursesListView" Grid.Column="1" Grid.Row="1" Height="150" Width="400"/>
     </Grid>
 </Page>

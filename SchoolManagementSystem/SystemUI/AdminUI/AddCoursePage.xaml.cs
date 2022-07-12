@@ -17,19 +17,36 @@ using SystemLibrary.StudentAccountModels;
 using SystemLibrary.TeacherAccountModels;
 
 namespace SystemUI.AdminUI {
+
     /// <summary>
     /// Logika interakcji dla klasy AddCoursePage.xaml
     /// </summary>
     public partial class AddCoursePage : Page {
 
+        /// <summary>
+        /// Represents all teachers models from database.
+        /// </summary>
         public List<TeacherModelSA> Teachers { get; set; } = new List<TeacherModelSA>();
 
+        /// <summary>
+        /// Represents all students models from database.
+        /// </summary>
         public List<StudentModelTA> Students { get; set; } = new List<StudentModelTA>();
 
+        /// <summary>
+        /// List of string whichs represent students in combo box.
+        /// </summary>
         public List<String> StudentsStringsComboBox { get; set; } = new List<string>();
 
+        /// <summary>
+        /// List of string whichs represent students in list box.
+        /// </summary>
         public List<String> StudentsStringsListBox { get; set; } = new List<string>();
 
+        /// <summary>
+        /// Initializes a new instance of the AddCoursePage class, fills teachers and students lists 
+        /// and populizes combo boxes with students and teachers.
+        /// </summary>
         public AddCoursePage() {
 
             InitializeComponent();
@@ -44,6 +61,10 @@ namespace SystemUI.AdminUI {
             StudentsComboBox.ItemsSource = StudentsStringsComboBox;
         }
 
+        /// <summary>
+        /// Adds selected student to list box and deletes 
+        /// him from combo box.
+        /// </summary>
         private void AddStudentButton_Click(object sender, RoutedEventArgs e) {
 
             if (StudentsStringsComboBox.Count > 0 && StudentsComboBox.SelectedItem != null) {
@@ -56,6 +77,9 @@ namespace SystemUI.AdminUI {
             }
         }
 
+        /// <summary>
+        /// Fills combo box and list box with updated data.
+        /// </summary>
         private void Refresh() {
 
             StudentsComboBox.ItemsSource = null;
@@ -65,6 +89,10 @@ namespace SystemUI.AdminUI {
             StudentsListBox.ItemsSource = StudentsStringsListBox;
         }
 
+        /// <summary>
+        /// Adds selected student to combo box and deletes
+        /// him from list box.
+        /// </summary>
         private void RemoveStudentButton_Click(object sender, RoutedEventArgs e) {
 
             if (StudentsStringsListBox.Count > 0) {
@@ -77,6 +105,9 @@ namespace SystemUI.AdminUI {
             }
         }
 
+        /// <summary>
+        /// Saves course to database.
+        /// </summary>
         private void AddCourseButton_Click(object sender, RoutedEventArgs e) {
             if (ValidPage()) {
 
@@ -98,6 +129,10 @@ namespace SystemUI.AdminUI {
             }
         }
 
+        /// <summary>
+        /// Checks wheter the text boxes from page are valid.
+        /// </summary>
+        /// <returns>True if the text boxes form page are valid, false if not.</returns>
         private bool ValidPage() {
 
             if (NameOfTheCourseBox.Text.Length == 0) {

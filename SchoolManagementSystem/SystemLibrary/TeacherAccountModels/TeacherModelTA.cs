@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 using SystemLibrary.CommonModels;
 
 namespace SystemLibrary.TeacherAccountModels {
-    public class TeacherModelTA : UserModel {
+
+    /// <summary>
+    /// Represents teacher in teacher account.
+    /// </summary>
+    public class TeacherModelTA : IUserModel {
 
         /// <summary>
         /// Represents first name of the teacher. 
@@ -38,9 +42,19 @@ namespace SystemLibrary.TeacherAccountModels {
         /// </summary>
         public List<CourseModelTA> Courses { get; set; } = new List<CourseModelTA>();
 
+        /// <summary>
+        /// Initializes a new instance of the TeacherModelTA class.
+        /// </summary>
         public TeacherModelTA() {
         }
 
+        /// <summary>
+        /// Initializes a new instance of the TeacherModelTA class.
+        /// </summary>
+        /// <param name="firstName">First name of the teacher.</param>
+        /// <param name="lastName">Last name of the teacher.</param>
+        /// <param name="emailAddress">Email address of the teacher.</param>
+        /// <param name="password">Password of the teacher.</param>
         public TeacherModelTA(string firstName, string lastName, string emailAddress, string password) {
             FirstName = firstName;
             LastName = lastName;
