@@ -49,6 +49,13 @@ namespace SystemUI {
                     StudentModelSA student = dataConnector.ValidStudentPassword(LoginBox.Text, PasswordBox.Password);
 
                     if (student != null) {
+
+                        var mw = Application.Current.Windows
+                                .Cast<Window>()
+                                .FirstOrDefault(window => window is MainWindow) as MainWindow;
+
+                        mw.emailtextblock.Text = student.EmailAddress;
+
                         this.NavigationService.Navigate(new StudentMenuPage(student));
                     }
                     else {
@@ -63,6 +70,13 @@ namespace SystemUI {
                     TeacherModelTA teacher = dataConnector.ValidTeacherPassword(LoginBox.Text, PasswordBox.Password);
 
                     if (teacher != null) {
+
+                        var mw = Application.Current.Windows
+                               .Cast<Window>()
+                               .FirstOrDefault(window => window is MainWindow) as MainWindow;
+
+                        mw.emailtextblock.Text = teacher.EmailAddress;
+
                         this.NavigationService.Navigate(new TeacherMenuPage(teacher));
                     }
                     else {
@@ -77,6 +91,13 @@ namespace SystemUI {
                     AdminModel admin = dataConnector.ValidAdminPassword(LoginBox.Text, PasswordBox.Password);
 
                     if (admin != null) {
+
+                        var mw = Application.Current.Windows
+                               .Cast<Window>()
+                               .FirstOrDefault(window => window is MainWindow) as MainWindow;
+
+                        mw.emailtextblock.Text = admin.EmailAddress;
+
                         this.NavigationService.Navigate(new AdminMenuPage(admin));
                     }
                     else {
